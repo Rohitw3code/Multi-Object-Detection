@@ -4,9 +4,9 @@ from random import shuffle
 
 def split_data(input_folder, output_folder, train_ratio=0.7, val_ratio=0.15, test_ratio=0.15):
     # Ensure the output folders exist, if not, create them
-    train_folder = os.path.join(output_folder, 'train', 'labels')
-    val_folder = os.path.join(output_folder, 'val', 'labels')
-    test_folder = os.path.join(output_folder, 'test', 'labels')
+    train_folder = os.path.join(output_folder, 'train', 'images')
+    val_folder = os.path.join(output_folder, 'val', 'images')
+    test_folder = os.path.join(output_folder, 'test', 'images')
 
     os.makedirs(train_folder, exist_ok=True)
     os.makedirs(val_folder, exist_ok=True)
@@ -40,7 +40,7 @@ def split_data(input_folder, output_folder, train_ratio=0.7, val_ratio=0.15, tes
         shutil.copyfile(source_path, dest_path)
 
 if __name__ == "__main__":
-    input_folder = "labels"  # Replace with the actual path to Folder A
+    input_folder = "images"  # Replace with the actual path to Folder A
     output_folder = "data/"  # Replace with the desired output path
 
     # Specify the ratio for train, validation, and test
